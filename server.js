@@ -20,7 +20,7 @@ app.get('/campsites', (req, res) => {
 });
 
 app.post('/campsites', (req, res) => {
-    res.end(`Will add the campsite: ${req.body.name} with description ${req.body.description}`);
+    res.end(`Will add the campsite: ${req.body.name} with description: ${req.body.description}`);
 });
 
 app.put('/campsites', (req, res) => {
@@ -36,17 +36,17 @@ app.get('/campsites/:campsiteId', (req, res) => {
     res.end(`Will send details of the campsite: ${req.params.campsiteId}`);
 });
 
-app.post('/campsite/:campsiteId', (req, res) => {
+app.post('/campsites/:campsiteId', (req, res) => {
     res.statusCode = 403;
     res.end(`POST operation not supported on /campsites/${req.params.campsiteId}`);
 });
 
-app.put('/campsite/:campsiteId', (req, res) => {
+app.put('/campsites/:campsiteId', (req, res) => {
     res.write(`Updating the campsite: ${req.params.campsiteId}\n`);
     res.end(`Will update the campsite: ${req.body.name} with description: ${req.body.description}`);
 });
 
-app.delete('/campsite/:campsiteId', (req, res) => {
+app.delete('/campsites/:campsiteId', (req, res) => {
     res.end(`Deleting campsite: ${req.params.campsiteId}`);
 });
 
