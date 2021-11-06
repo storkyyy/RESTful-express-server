@@ -14,7 +14,6 @@ app.use(express.json());
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
-
 //__dirname = refers to absolute path of current directory 
 app.use(express.static(__dirname + '/public'));
 
